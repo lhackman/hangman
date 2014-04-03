@@ -1,6 +1,6 @@
 import curses
 import sys
-import hangman_mc
+import hangman_m
 import hangman_v
 
 """
@@ -9,7 +9,8 @@ Date: April 2, 2014
 """
 
 
-def main(game, stdscr):
+def hangman_c(game, stdscr):
+    #this is the "contorller" part of our hangman game.
     
     #create our game "view"
     #create view for handling updating the screen
@@ -29,7 +30,7 @@ def main(game, stdscr):
 #Otherwise use the word giraffe.
 secret_word = sys.argv[1].strip().lower() if len(sys.argv) >1 else "giraffe"
 
-#create our game "model/controller"
-game = hangman_mc.Hangman_mc(secret_word)
+#create our game "model"
+game = hangman_m.Hangman_m(secret_word)
 
-curses.wrapper(lambda screen: main(game, screen))
+curses.wrapper(lambda screen: hangman_c(game, screen))

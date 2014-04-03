@@ -1,4 +1,4 @@
-class Hangman_mc:
+class Hangman_m:
     
     """
     Author: Leah Hackman
@@ -25,7 +25,7 @@ class Hangman_mc:
         Determine if the player has run out of lives, 
         or has solved the secret_word
         """
-        return self.num_errors >= Hangman_mc.max_guesses or self.solved()
+        return self.num_errors >= Hangman_m.max_guesses or self.solved()
 	    
     def solved(self):
         """
